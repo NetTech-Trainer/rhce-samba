@@ -79,9 +79,22 @@ vi /etc/samba/smb.conf
 Add the following configuration:
 
 ```
+[global]
+workgroup = SAMBA  
+netbios name = centos
+security = user
+map to guest = bad user
+dns proxy = no
+
+[Apps]
+comment = Shared Dir
+path = /samba/apps
+browsable = yes
+writable = yes
 guest ok = yes
 guest only = yes
 read only = no
+
 
 ```
 
